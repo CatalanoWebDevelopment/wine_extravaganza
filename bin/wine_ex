@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+# REQUIRES
+require './lib/wine_extravaganza'
+
+WineExtravaganza::CLI.new.call
