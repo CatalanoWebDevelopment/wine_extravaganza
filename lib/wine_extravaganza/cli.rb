@@ -15,7 +15,6 @@ class WineExtravaganza::CLI
     def list_deals
         input = gets.strip.downcase
         binding.pry
-        
     end
     
 end
