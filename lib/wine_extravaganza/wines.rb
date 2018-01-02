@@ -48,3 +48,26 @@ class WineExtravaganza::Cabernet
     end
 
 end
+
+class WineExtravaganza::Chardonnay
+    
+    def deals 
+        # HTML DOCUMENT
+        @doc = Nokogiri::HTML(open("http://www.winemag.com/gallery/20-american-chardonnays-to-buy-now/#gallery-carousel-1", 'User-Agent' => 'chrome'))
+        
+        # PARSING THE DOCUMENT TO GET TO THE DEALS
+        strings = @doc.search("div.text-area p a strong").text
+        wines = strings.split(".")
+        
+        # DEALS
+        puts "BEST VALUES!".green
+        puts "1. #{wines[0]}"
+        puts "2. #{wines[1]}"
+        puts "3. #{wines[2]}"
+        puts "4. #{wines[3]}"
+        puts "5. #{wines[4]}"
+        puts ""
+        
+    end
+    
+end
