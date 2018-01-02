@@ -70,6 +70,7 @@ class WineExtravaganza::CLI
             puts ""
             
             # VALUES
+            WineExtravaganza::Cabernet.new.deals
             
             #RERUN PROGRAM
             puts "Want to keep looking? If not, just type in 'exit'!"
@@ -89,7 +90,8 @@ class WineExtravaganza::CLI
             puts ""
             
             #VALUES
-            
+            WineExtravaganza::Chardonnay.new.deals
+
             #RERUN PROGRAM
             puts "Want to keep looking? If not, just type in 'exit'!"
             options

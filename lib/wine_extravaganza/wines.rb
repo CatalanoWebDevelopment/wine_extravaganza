@@ -4,9 +4,7 @@ require 'colorize'
 require 'pry'
 
 class WineExtravaganza::Merlot
-    attr_accessor :name, :price, :year, :description
-    @@deals = []
-    
+ 
     def deals
         # HTML DOCUMENT
         @doc = Nokogiri::HTML(open("http://www.winemag.com/2015/01/14/6-top-rated-merlots-under-25/", 'User-Agent' => 'chrome'))
@@ -29,4 +27,24 @@ class WineExtravaganza::Merlot
 end
 
 class WineExtravaganza::Cabernet
+    
+    def deals
+        # HTML DOCUMENT
+        @doc = Nokogiri::HTML(open("http://www.winemag.com/2015/01/22/30-napa-cabs-under-30-that-deliver-flavor-and-value/", 'User-Agent' => 'chrome'))
+                
+        # PARSING THE DOCUMENT TO GET TO THE DEALS
+        strings = @doc.search("div.article-content p strong a").text
+        wines = strings.split("points")
+                
+        # DEALS
+        puts "BEST VALUES!".green
+        puts "#{wines[0]}points"
+        puts "#{wines[1]}points"
+        puts "#{wines[2]}points"
+        puts "#{wines[3]}points"
+        puts "#{wines[4]}points"
+        puts ""
+        
+    end
+
 end
