@@ -20,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem will prompt the user to select from a list of wine blends which they would like to know more information about. Simply type in the number associated with the wine to learn about its:
+
+1. Description
+2. Taste
+3. Style
+4. Food Pairings
+5. Top Five Best Values
 
 ## Development
 
