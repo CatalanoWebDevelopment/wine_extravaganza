@@ -1,19 +1,28 @@
+# ALL DESCRIPTIONS ARE COURTESY OF http://winefolly.com/review/common-types-of-wine/
+
 require 'colorize'
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require_relative '../wine_extravaganza'
 
 class WineExtravaganza::CLI
     
     def call
-        list_deals
+        greeting
+        options
         menu
     end
     
-    def list_deals
-       puts "Welcome to WineExtravaganza! To see a list of the most current, top-rated wines, type in the number associated with Merlot, Cabernet, Chardonnay, Pinot noir, Pinot gris, Syrah, Sauvignon blanc, or Riesling for a description of the blend and the top ten highest values. To quit the program, just type 'exit'. Enjoy!".blue
+    def greeting
+        
+       puts "Welcome to WineExtravaganza! To see a list of the most current, top-rated wines, type in the number associated with Merlot, Cabernet, Chardonnay, Pinot noir, Pinot gris, Syrah, Sauvignon blanc, or Riesling for a description of the blend and the top five best values. To quit the program, just type 'exit'. Enjoy!".blue
        puts "-------------------------------------------------".white
        puts "Which wine would you like to look at?".blue
+        
+    end
+    
+    def options
     
         puts "1. Merlot".red
         puts "2. Cabernet".blue
@@ -28,6 +37,7 @@ class WineExtravaganza::CLI
     end
     
     def menu
+        
         input = gets.strip.downcase
         if input == "1"
             # DESCRIPTIONS
@@ -40,8 +50,11 @@ class WineExtravaganza::CLI
             puts ""
             
             # VALUES
+            WineExtravaganza::Merlot.new.deals
             
             #RERUN PROGRAM
+            puts "Want to keep looking? If not, just type in 'exit'!"
+            options
             menu
             
         elsif input == "2"
@@ -59,6 +72,8 @@ class WineExtravaganza::CLI
             # VALUES
             
             #RERUN PROGRAM
+            puts "Want to keep looking? If not, just type in 'exit'!"
+            options
             menu
             
         elsif input == "3"
@@ -76,6 +91,8 @@ class WineExtravaganza::CLI
             #VALUES
             
             #RERUN PROGRAM
+            puts "Want to keep looking? If not, just type in 'exit'!"
+            options
             menu
             
         elsif input == "4"
@@ -92,7 +109,9 @@ class WineExtravaganza::CLI
             
             #VALUES
             
-            #RERUN PROGRAM
+           #RERUN PROGRAM
+            puts "Want to keep looking? If not, just type in 'exit'!"
+            options
             menu
             
         elsif input == "5"
@@ -110,6 +129,8 @@ class WineExtravaganza::CLI
             #VALUES
             
             #RERUN PROGRAM
+            puts "Want to keep looking? If not, just type in 'exit'!"
+            options
             menu
             
         elsif input == "6"
@@ -127,6 +148,8 @@ class WineExtravaganza::CLI
             #VALUES
             
             #RERUN PROGRAM
+            puts "Want to keep looking? If not, just type in 'exit'!"
+            options
             menu
             
         elsif input == "7"
@@ -144,6 +167,8 @@ class WineExtravaganza::CLI
             #VALUES
             
             #RERUN PROGRAM
+            puts "Want to keep looking? If not, just type in 'exit'!"
+            options
             menu
             
         elsif input == "8"
@@ -161,6 +186,8 @@ class WineExtravaganza::CLI
             #VALUES
             
             #RERUN PROGRAM
+            puts "Want to keep looking? If not, just type in 'exit'!"
+            options
             menu
             
         elsif input == "exit"
@@ -168,12 +195,15 @@ class WineExtravaganza::CLI
             
         else
             puts "We don't understand that command. Maybe you pressed the wrong key? Give it another shot! Cheers <3"
+            options
             menu
         end    
     end
     
     def goodbye
-        puts "Thank you for using Wine Extravaganze for your daily deals. See you next time!"
+        
+        puts "Thank you for using Wine Extravaganza for your daily deals. See you next time!"
+        
     end
     
 end

@@ -2,3 +2,4 @@
 require 'nokogiri'
 require_relative "./wine_extravaganza/version"
 require_relative "./wine_extravaganza/cli"
+require_relative "./wine_extravaganza/wines"
