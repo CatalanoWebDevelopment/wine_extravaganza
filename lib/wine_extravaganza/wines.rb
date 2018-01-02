@@ -71,3 +71,26 @@ class WineExtravaganza::Chardonnay
     end
     
 end
+
+class WineExtravaganza::Pinot_noir
+    
+    def deals
+        # HTML DOCUMENTS
+        @doc = Nokogiri::HTML(open("http://www.winemag.com/gallery/americas-best-value-pinot-noirs/#gallery-carousel-1", 'User-Agent' => 'chrome'))
+        
+        # PARSING THE DOCUMENTS TO GET TO THE DEALS
+        strings = @doc.search("div.text-area p a").text
+        wines = strings.split(")")
+        
+        # DEALS
+        puts "BEST VALUES!".green
+        puts "1. #{wines[0]})"
+        puts "2. #{wines[1]})"
+        puts "3. #{wines[2]})"
+        puts "4. #{wines[3]})"
+        puts "5. #{wines[4]})"
+        puts ""
+        
+    end
+
+end

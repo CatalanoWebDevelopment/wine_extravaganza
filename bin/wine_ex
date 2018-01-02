@@ -3,5 +3,5 @@
 # REQUIRES
 require './lib/wine_extravaganza'
 
-WineExtravaganza::Chardonnay.new.deals
+WineExtravaganza::Pinot_noir.new.deals
 WineExtravaganza::CLI.new.call
