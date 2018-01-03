@@ -168,10 +168,20 @@ class WineExtravaganza::Riesling
     
     def deals 
         # HTML DOCUMENT
+        @doc = Nokogiri::HTML(open("http://www.snooth.com/articles/10-top-value-rieslings/?viewall=1", 'User-Agent' => 'chrome'))
         
         # PARSING THE DOCUMENT TO GET TO THE DEALS
+        strings = @doc.search("div.slideshow-main-clearfix h2.title").text
+        wines = strings.split("$")
         
         # DEALS
+        puts "BEST VALUES!".green
+        puts "1. #{wines[0]}$15, 89pts"
+        puts "2. #{wines[1].gsub(/15/, '')}$15, 88pts"
+        puts "3. #{wines[2].gsub(/^12/, '')}$15, 87pts"
+        puts "4. #{wines[3].gsub(/^12/, '')}$12, 87pts"
+        puts "5. #{wines[4].gsub(/14/, '')}$14, 87pts"
+        puts ""
         
     end
     
