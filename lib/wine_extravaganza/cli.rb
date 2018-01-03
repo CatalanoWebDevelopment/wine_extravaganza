@@ -130,6 +130,7 @@ class WineExtravaganza::CLI
             puts ""
             
             #VALUES
+            WineExtravaganza::Pinot_gris.new.deals
             
             #RERUN PROGRAM
             puts "Want to keep looking? If not, just type in 'exit'!"
@@ -149,6 +150,7 @@ class WineExtravaganza::CLI
             puts ""
             
             #VALUES
+            WineExtravaganza::Syrah.new.deals
             
             #RERUN PROGRAM
             puts "Want to keep looking? If not, just type in 'exit'!"
@@ -168,6 +170,7 @@ class WineExtravaganza::CLI
             puts ""
             
             #VALUES
+            WineExtravaganza::Sauvignon_blanc.new.deals
             
             #RERUN PROGRAM
             puts "Want to keep looking? If not, just type in 'exit'!"
@@ -187,6 +190,7 @@ class WineExtravaganza::CLI
             puts ""
             
             #VALUES
+            WineExtravaganza::Riesling.new.deals
             
             #RERUN PROGRAM
             puts "Want to keep looking? If not, just type in 'exit'!"
