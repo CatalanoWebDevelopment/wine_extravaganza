@@ -145,10 +145,20 @@ class WineExtravaganza::Sauvignon_blanc
     
     def deals 
         # HTML DOCUMENT
+        @doc = Nokogiri::HTML(open("http://www.independent.co.uk/extras/indybest/food-drink/best-sauvignon-blanc-new-zealand-france-chile-south-africa-california-a6979031.html", 'User-Agent' => 'chrome'))
         
         # PARSING THE DOCUMENT TO GET TO THE DEALS
+        strings = @doc.search("div.text-wrapper p strong").text
+        wines = strings.split(":")
         
         # DEALS
+        puts "BEST VALUES!".green
+        puts "1.  #{wines[0]} - $9, 91pts"
+        puts "2.  #{wines[1].gsub(/Buy now/, '')} - $12, 91pts"
+        puts "3.  #{wines[2].gsub(/Buy now/, '')} - $10.99, 88pts"
+        puts "4.#{wines[3].gsub(/Buy now/, '')} - $17.50, 90pts"
+        puts "5. #{wines[4].gsub(/Buy now/, '')} - $7, 84pts"
+        puts ""
         
     end
     
