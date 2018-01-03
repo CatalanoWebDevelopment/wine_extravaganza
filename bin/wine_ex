@@ -3,5 +3,4 @@
 # REQUIRES
 require './lib/wine_extravaganza'
 
-WineExtravaganza::Riesling.new.deals
 WineExtravaganza::CLI.new.call
