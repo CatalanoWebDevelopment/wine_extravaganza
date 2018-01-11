@@ -1,8 +1,3 @@
-require 'nokogiri'
-require 'open-uri'
-require 'colorize'
-require 'pry'
-
 class WineExtravaganza::Merlot
  
     def deals

@@ -1,11 +1,4 @@
 # ALL DESCRIPTIONS ARE COURTESY OF http://winefolly.com/review/common-types-of-wine/
-
-require 'colorize'
-require 'pry'
-require 'nokogiri'
-require 'open-uri'
-require_relative '../wine_extravaganza'
-
 class WineExtravaganza::CLI
     
     def call
